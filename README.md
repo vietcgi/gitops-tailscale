@@ -5,7 +5,7 @@ Personal Tailscale tailnet managed entirely in code with Pulumi.
 ## Architecture
 
 ```
-gitops-tailscale-v/
+gitops-tailscale/
 ├── infra/                    # Pulumi infrastructure code
 │   ├── Pulumi.yaml           # Project configuration
 │   ├── Pulumi.prod.yaml      # Production stack config
