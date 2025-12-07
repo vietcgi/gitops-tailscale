@@ -39,11 +39,7 @@ export function createTailnetSettings(): SettingsOutputs {
         // Network flow logging - useful for debugging but may have privacy implications
         networkFlowLoggingOn: networkFlowLoggingEnabled,
 
-        // Regional routing - enable for better performance
-        regionalRoutingOn: true,
-
-        // Post-quantum crypto - enable for enhanced security (may have performance impact)
-        // postQuantumOn: false,
+        // Note: regionalRoutingOn requires paid plan
     });
 
     // ==========================================================================

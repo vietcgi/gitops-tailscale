@@ -25,7 +25,9 @@ export function createAuthKeys(): KeyOutputs {
     const config = new pulumi.Config();
 
     // Configuration
-    const createReusableKey = config.getBoolean("createReusableKey") ?? true;
+    // Note: Auth keys require OAuth client to have tag scopes (e.g., tag:server)
+    // Set createReusableKey to true after configuring OAuth scopes
+    const createReusableKey = config.getBoolean("createReusableKey") ?? false;
     const keyExpiryDays = config.getNumber("keyExpiryDays") ?? 90;
 
     // Calculate expiry time (Tailscale expects seconds)
@@ -45,7 +47,8 @@ export function createAuthKeys(): KeyOutputs {
             preauthorized: true,
             expiry: expirySeconds,
             description: "GitOps managed reusable key for server onboarding",
-            tags: ["tag:server"],
+            // Note: To use tags, OAuth client needs 'devices:write' scope with tag permissions
+            // tags: ["tag:server"],
         });
 
         outputs.reusableKeyId = serverKey.id;
