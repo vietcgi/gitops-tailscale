@@ -1,0 +1,9 @@
+name: gitops-tailscale
+description: Personal Tailscale tailnet infrastructure managed with Pulumi
+runtime: nodejs
+
+# Project configuration
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: tailscale-typescript

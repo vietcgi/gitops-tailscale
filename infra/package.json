@@ -1,0 +1,23 @@
+{
+    "name": "gitops-tailscale",
+    "version": "1.0.0",
+    "description": "Tailscale infrastructure as code with Pulumi",
+    "main": "index.ts",
+    "scripts": {
+        "build": "tsc",
+        "preview": "pulumi preview",
+        "up": "pulumi up",
+        "destroy": "pulumi destroy",
+        "refresh": "pulumi refresh",
+        "lint": "eslint src --ext .ts",
+        "format": "prettier --write '**/*.ts'"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@pulumi/pulumi": "^3.0.0",
+        "@pulumi/tailscale": "^0.23.0"
+    }
+}
